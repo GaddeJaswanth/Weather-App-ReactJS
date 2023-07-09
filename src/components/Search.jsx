@@ -33,7 +33,7 @@ export default function Search(){
     }
 
     return (
-        <div align="center">
+        <div align="center" id="mainDiv">
             <div className="md:flex lg:flex justify-center mt-5 sm:block">
                 <input type="text" className="mr-5 px-5 py-5 h-5" value={city} placeholder="Enter Location" onChange={(e)=>{
                     setCity(e.target.value);
@@ -48,8 +48,25 @@ export default function Search(){
                     <h1>Enter a valid Location</h1>
                 </div>
             ):(
-                <div className="text-center mt-5 bg-black text-white w-[90%]">
-                    <h1>Temperature : {data.main.temp}</h1>
+                //Current Weather
+                <div>
+                    <h1>Current Weather</h1>
+                    <div className="md:flex lg:flex text-center mt-5 w-[90%] sm:block rounded-lg">
+                    <div className="w-[45%] mr-[10%] rounded-lg text-black bg-white">
+                        <h1>{data.name.toUpperCase()}</h1>
+                        <h1>{data.main.temp} °C</h1>
+                        <img align="center" src={"https://openweathermap.org/img/wn/"+ data.weather[0].icon + ".png"} alt="icon" />
+                        <h2>Feels Like : {data.main.feels_like} °C</h2>
+                        <h4>{data.weather[0].main}</h4>
+                        <p>{data.weather[0].description}</p>
+                    </div>
+                    <div className="bg-white text-black w-[45%] rounded-lg">
+                        <h1>Min Temp : {data.main.temp_min}</h1>
+                        <h1>Max Temp : {data.main.temp_max}</h1>
+                        <h1>Pressure : {data.main.pressure}</h1>
+                        <h1>Humidity : {data.main.humidity}</h1>
+                    </div>
+                </div>
                 </div>
             )
             }
