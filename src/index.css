@@ -5,8 +5,6 @@
 body {
     text-align: center;
     justify-content: center;
-    background-image: url(https://free4kwallpapers.com/uploads/originals/2015/09/16/weather-live-wallpaper-icon.jpg);
-    background-color: rgb(75, 99, 135);
-    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, green, yellow);
     background-position: sticky;
 }
