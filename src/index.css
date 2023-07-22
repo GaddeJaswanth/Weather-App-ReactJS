@@ -4,16 +4,5 @@
 
 body {
     text-align: center;
-    justify-content: center;
-    background-image: linear-gradient(to right, rgb(125, 189, 189), rgb(115, 188, 212));
-    background-position: sticky;
-}
-
-table, td{
-    border: 1;
-    border-color: white;
-}
-
-.tableHeads {
-    font-size: large;
+    background-image: linear-gradient(to right,rgb(6, 104, 251),rgb(127, 189, 209));
 }
