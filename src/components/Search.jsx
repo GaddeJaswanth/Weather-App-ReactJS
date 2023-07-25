@@ -57,10 +57,10 @@ export default function Search(){
                 ):(
                 //Current Weather
                     <div className="mt-6">
-                        <h1 className="text-3xl font-bold p-4 text-white">Current Weather</h1>
-                        <div className="md:flex text-center mt-5 w-[90%] sm:block">
-                            <div id="weather" className="ml-[4%] p-6 md:w-[40%] mr-[10%] rounded-lg text-white shadow-lg sm:w-[90%]">
-                                <table align="center">
+                        <h1 className="text-4xl font-sans p-4 text-white">Current Weather</h1>
+                        <div className="lg:flex text-center mt-5 w-[90%] sm:block">
+                            <div id="weather" className="ml-[4%] p-6 w-[40%] mr-[10%] rounded-3xl text-white shadow-lg sm:w-[80%]">
+                                <table align="center" className="sm:w-[80%]">
                                     <tr>
                                         <td><h1 className="text-2xl">{data.name.toUpperCase()}</h1></td>
                                     </tr>
@@ -73,7 +73,7 @@ export default function Search(){
                                     <tr><td><h3 className="text-3xl">{data.weather[0].main}</h3></td></tr>
                                 </table>
                             </div>
-                            <table id="details" className="ml-[4%] text-white md:w-[40%] rounded-lg shadow-lg">
+                            <table id="details" className="ml-[4%] text-white w-[40%] rounded-3xl shadow-lg sm:w-[80%] mt-10">
                                 <tr>
                                     <td>{<MdNotes size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline"> Description</h1></td>
                                     <td><h1 className="text-xl">{data.weather[0].description.toUpperCase()}</h1></td>
