@@ -41,7 +41,7 @@ export default function Search(){
                 
             </div>
             <div className="flex justify-center mt-5">
-                <input type="text" className="mr-6 px-10 py-5 h-5 rounded-3xl" value={city} placeholder="Enter Location" onChange={(e)=>{
+                <input type="text" className="mr-6 px-12 py-6 h-5 rounded-3xl" value={city} placeholder="Enter Location" onChange={(e)=>{
                     setCity(e.target.value);
                 }}/>
                 <BsSearch className="cursor-pointer mt-1" size={30} onClick={()=>{
@@ -57,8 +57,8 @@ export default function Search(){
                 ):(
                 //Current Weather
                     <div className="mt-6">
-                        <h1 className="text-4xl font-sans p-4 text-white">Current Weather</h1>
-                        <div className="lg:flex text-center mt-5 w-[90%] sm:block">
+                        <h1 className="text-4xl font-sans py-4 text-white">Current Weather</h1>
+                        <div className="lg:flex text-center mt-5 w-[90%] h-[100%] sm:block">
                             <div id="weather" className="ml-[4%] p-6 w-[40%] mr-[10%] rounded-3xl text-white shadow-lg sm:w-[80%]">
                                 <table align="center" className="sm:w-[80%]">
                                     <tr>
@@ -73,7 +73,7 @@ export default function Search(){
                                     <tr><td><h3 className="text-3xl">{data.weather[0].main}</h3></td></tr>
                                 </table>
                             </div>
-                            <table id="details" className="ml-[4%] text-white w-[40%] rounded-3xl shadow-lg sm:w-[80%] mt-10">
+                            <table id="details" className="ml-[4%] text-white w-[40%] rounded-3xl shadow-lg sm:w-[80%]">
                                 <tr>
                                     <td>{<MdNotes size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline"> Description</h1></td>
                                     <td><h1 className="text-xl">{data.weather[0].description.toUpperCase()}</h1></td>
