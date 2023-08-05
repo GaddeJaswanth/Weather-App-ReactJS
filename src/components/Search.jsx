@@ -11,6 +11,7 @@ export default function Search(){
 
     var [city, setCity] = useState("");
     var [data, setData] = useState(null);
+    let iconcolor = 'yellow';
 
     const getData = () => {
         const url = `https://api.openweathermap.org/data/2.5/weather?appid=c69b7b0d4facca47fbc79d53857e5c7b&units=metric&q=` + city;
@@ -41,10 +42,14 @@ export default function Search(){
                 
             </div>
             <div className="flex justify-center mt-5">
-                <input type="text" className="mr-6 px-12 py-6 h-5 rounded-3xl" value={city} placeholder="Enter Location" onChange={(e)=>{
+                <input type="text" id='inputField' className="mr-6 px-12 py-6 h-5 rounded-3xl border-white" value={city} placeholder="Enter Location" onChange={(e)=>{
                     setCity(e.target.value);
+                }} onKeyDown={(event)=>{
+                    if(event.key==="Enter"){
+                        getData();
+                    }
                 }}/>
-                <BsSearch className="cursor-pointer mt-1" size={30} onClick={()=>{
+                <BsSearch className="cursor-pointer mt-2 border-white" size={30} onClick={()=>{
                     getData();
                 }}/>
                 
@@ -62,7 +67,7 @@ export default function Search(){
                             <div id="weather" className="ml-[4%] pt-6 pb-6 w-[40%] mr-[10%] rounded-3xl text-white shadow-lg sm:w-[80%]">
                                 <table align="center" className="sm:w-[80%]">
                                     <tr>
-                                        <td><h1 className="text-2xl">{data.name.toUpperCase()}</h1></td>
+                                        <td><h1 className="text-2xl font-semibold">{data.name.toUpperCase()}</h1></td>
                                     </tr>
                                     <tr>
                                         <td className="p-5"><h1 className="text-5xl">{data.main.temp} °C</h1></td>
@@ -75,27 +80,27 @@ export default function Search(){
                             </div>
                             <table id="details" className="ml-[4%] text-white w-[40%] rounded-3xl shadow-lg sm:w-[80%]">
                                 <tr>
-                                    <td>{<MdNotes size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline"> Description</h1></td>
+                                    <td>{<MdNotes size={30} className="inline mr-1" color={iconcolor}/>} <h1 className="text-xl inline"> Description</h1></td>
                                     <td><h1 className="text-xl">{data.weather[0].description.toUpperCase()}</h1></td>
                                 </tr>
                                 <tr>
-                                    <td>{<TbTemperatureCelsius size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline">Feels Like</h1></td>
+                                    <td>{<TbTemperatureCelsius size={30} className="inline mr-1" color={iconcolor}/>} <h1 className="text-xl inline">Feels Like</h1></td>
                                     <td><h1 className="text-2xl">{data.main.feels_like} °C</h1></td>
                                 </tr>
                                 <tr>
-                                    <td>{<HiMiniArrowDown size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline">Min Temp</h1></td>
+                                    <td>{<HiMiniArrowDown size={30} className="inline mr-1" color={iconcolor}/>} <h1 className="text-xl inline">Min Temp</h1></td>
                                     <td><h1 className="text-2xl">{data.main.temp_min} °C</h1></td>
                                 </tr>
                                 <tr>
-                                    <td>{<HiMiniArrowUp size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline">Max Temp</h1></td>
+                                    <td>{<HiMiniArrowUp size={30} className="inline mr-1" color={iconcolor}/>} <h1 className="text-xl inline">Max Temp</h1></td>
                                     <td><h1 className="text-2xl">{data.main.temp_max} °C</h1></td>
                                 </tr>
                                 <tr>
-                                    <td>{<AiOutlineCompress size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline">Pressure</h1></td>
+                                    <td>{<AiOutlineCompress size={30} className="inline mr-1" color={iconcolor}/>} <h1 className="text-xl inline">Pressure</h1></td>
                                     <td><h1 className="text-2xl">{data.main.pressure}</h1></td>
                                 </tr>
                                 <tr>
-                                    <td>{<WiHumidity size={30} className="inline mr-1" color="lightgreen"/>} <h1 className="text-xl inline">Humidity</h1></td>
+                                    <td>{<WiHumidity size={30} className="inline mr-1" color={iconcolor}/>} <h1 className="text-xl inline">Humidity</h1></td>
                                     <td><h1 className="text-2xl">{data.main.humidity}</h1></td>
                                 </tr>
                             </table>
@@ -103,6 +108,10 @@ export default function Search(){
                     </div>
                 )
             }
+
+            <div id='footer'>
+                <h2>Made by <u><a href="https://www.linkedin.com/in/jaswanth-gadde/" rel="noreferrer" target="_blank">Jaswanth Gadde</a></u></h2>
+            </div>
         </div>
     )
 }
