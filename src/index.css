@@ -4,5 +4,9 @@
 
 body {
     text-align: center;
-    background-image: linear-gradient(to right,rgb(6, 104, 251),rgb(127, 189, 209));
+    background-image: linear-gradient(to right,rgb(57, 118, 211),rgb(89, 174, 203));
+}
+
+#weather, #details {
+    background-color: rgba(255, 255, 255, 0.2);
 }

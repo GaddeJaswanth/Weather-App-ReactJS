@@ -59,7 +59,7 @@ export default function Search(){
                     <div className="mt-6">
                         <h1 className="text-4xl font-sans py-4 text-white">Current Weather</h1>
                         <div className="lg:flex text-center mt-5 w-[90%] h-[100%] sm:block">
-                            <div id="weather" className="ml-[4%] p-6 w-[40%] mr-[10%] rounded-3xl text-white shadow-lg sm:w-[80%]">
+                            <div id="weather" className="ml-[4%] pt-6 pb-6 w-[40%] mr-[10%] rounded-3xl text-white shadow-lg sm:w-[80%]">
                                 <table align="center" className="sm:w-[80%]">
                                     <tr>
                                         <td><h1 className="text-2xl">{data.name.toUpperCase()}</h1></td>
