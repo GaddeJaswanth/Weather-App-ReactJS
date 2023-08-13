@@ -109,9 +109,6 @@ export default function Search(){
                 )
             }
 
-            <div id='footer'>
-                <h2>Made by <u><a href="https://www.linkedin.com/in/jaswanth-gadde/" rel="noreferrer" target="_blank">Jaswanth Gadde</a></u></h2>
-            </div>
         </div>
     )
 }
